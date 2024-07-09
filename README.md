@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+## 🚩 소개
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+책을 구매할 수 있는 쇼핑몰입니다. 
 
-## Available Scripts
+<br />
 
-In the project directory, you can run:
+## ⭐ 기능
 
-### `npm start`
+- 회원 기능
+- 카테고리별 조회
+- 상품 상세 조회
+- 상품 좋아요
+- 장바구니
+- 주문하기
+- 다크모드 지원
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📒 사용 기술
 
-### `npm test`
+- React
+- Typescrip
+- 상태관리: Zustand / Context
+- CSS스타일링: styled-components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br />
 
-### `npm run build`
+## 💨 예시 화면
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| 메인 화면 | 로그인| 상세페이지 | 장바구니 | 주문하기 | 
+| --- | --- | --- | --- | --- |
+| <img src="https://github.com/bsu0404/bookstore-front/assets/86921174/203fc6aa-5878-4130-8cb1-aa9cdcec6139" width="300" /> |<img src="https://github.com/bsu0404/bookstore-front/assets/86921174/ce42fbff-866f-4664-b7a0-61810a93a9a6" width="300" /> | <img src="https://github.com/bsu0404/bookstore-front/assets/86921174/c85cec42-fb55-4669-98e0-614db101bdb2" width="300" /> |<img src="https://github.com/bsu0404/bookstore-front/assets/86921174/ba8c34be-5bba-44a4-b514-e0ffc6abe81a" width="300" /> | <img src="https://github.com/bsu0404/bookstore-front/assets/86921174/ed363b9a-1857-457b-b683-3f1ff14ef78c" width="300" /> |<img src="https://github.com/bsu0404/bookstore-front/assets/86921174/ed363b9a-1857-457b-b683-3f1ff14ef78c" width="300" />| 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
