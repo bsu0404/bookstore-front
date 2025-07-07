@@ -55,10 +55,10 @@ interface Theme {
 export const light: Theme = {
   name: "light",
   color: {
-    primary: "#ff5800",
+    primary: "	#E09E28",
     background: "lightgray",
     secondary: "#5F5F5F",
-    third: "coral",
+    third: "#FBC447",
     border: "gray",
     text: "black",
   },
@@ -117,10 +117,10 @@ export const dark: Theme = {
   ...light, // light 내용 가져오고 나머지는 오버라이드
   name: "dark",
   color: {
-    primary: "coral",
-    background: "midnightblue",
-    secondary: "yellow",
-    third: "blue",
+    primary: "#FFE699",
+    background: "lightgray",
+    secondary: "#A0A0A0",
+    third: "#FBC447",
     border: "grey",
     text: "white",
   },

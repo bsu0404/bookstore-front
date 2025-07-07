@@ -82,12 +82,19 @@ const router = createBrowserRouter([
       </Layout>
     ),
   },
+  {
+    path: "/orderlist",
+    element: (
+      <Layout>
+        <>주문내역</>
+      </Layout>
+    ),
+  },
 ]);
 function App() {
   return (
     <>
       <BookStoreProvider>
-        <ThemeSwitcher />
         <RouterProvider router={router} />
       </BookStoreProvider>
     </>

@@ -1,6 +1,7 @@
 import Footer from "../common/Footer";
 import Header from "../common/Header";
 import styled from "styled-components";
+import ThemeSwitcher from "../header/ThemeSwitcher";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,6 +9,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <LayoutStyle>
+      <ThemeSwitcher />
       <Header />
       <main>{children}</main>
       <Footer />
