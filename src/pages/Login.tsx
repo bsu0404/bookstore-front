@@ -29,7 +29,6 @@ const Login = () => {
     login(data).then(
       (res) => {
         storeLogin(res.token);
-        showAlert("로그인 성공");
         navigate("/");
       },
       (error) => {

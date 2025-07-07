@@ -1,26 +1,27 @@
 import styled from "styled-components";
 import { Book } from "../../models/book.model";
-import { getImgSrc } from "../../utils/image";
 import { formatNumber } from "../../utils/format";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 interface Props {
   book: Book;
+  direction?: "row" | "column";
 }
-const BooksItem = ({ book }: Props) => {
+const BooksItem = ({ book, direction = "column" }: Props) => {
   return (
-    <BooksItemStyle>
+    <BooksItemStyle direction={direction}>
       <Link to={`/book/${book.id}`}>
-        <div className="img">
-          <img src={getImgSrc(book.id)} alt={book.title} />
+        <div className="img_container">
+          <img src={book.img} alt={book.title} />
         </div>
         <div className="content">
           <h2 className="title">{book.title}</h2>
           <p className="summary">{book.summary}</p>
+          {direction === "row" && <p className="detail">{book.detail}</p>}
           <p className="author">{book.author}</p>
           <p className="price">{formatNumber(book.price)}원</p>
           <div className="likes">
-            <FaHeart /> {book.likes}
+            <FaHeart className="heart-icon" /> {book.likes}
           </div>
         </div>
       </Link>
@@ -28,23 +29,28 @@ const BooksItem = ({ book }: Props) => {
   );
 };
 
-const BooksItemStyle = styled.div`
+interface StyledProps {
+  direction: "row" | "column";
+}
+
+const BooksItemStyle = styled.div<StyledProps>`
   a {
     display: flex;
-    flex-direction: column;
+    flex-direction: ${({ direction }) => direction};
     box-shadow: 0 0 4px rgba(0, 0, 0, 2);
     text-decoration: none;
   }
 
-  .img {
+  .img_container {
     border-radius: ${({ theme }) => theme.borderRadius.default};
     overflow: hidden;
     img {
-      max-width: 100%;
+      max-width: ${({ direction }) => (direction === "row" ? "200px" : "100%")};
     }
   }
 
   .content {
+    flex: 1;
     padding: 16px;
     position: relative;
     .title {
@@ -68,23 +74,34 @@ const BooksItemStyle = styled.div`
       margin: 0 0 12px 0;
       font-weight: 700;
     }
+    .detail {
+      font-size: 0.875rem;
+      color: ${({ theme }) => theme.color.secondary};
+      margin: 0 0 12px 0;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
     .likes {
       display: inline-flex;
       align-items: center;
       gap: 4px;
       font-size: 0.875rem;
-      color: ${({ theme }) => theme.color.primary};
+      color: ${({ theme }) => theme.color.background};
       margin: 0 0 4px 0;
       font-weight: 700;
-      border: 1px solid ${({ theme }) => theme.color.border};
-      border-radius: ${({ theme }) => theme.borderRadius.default};
       padding: 4px 12px;
       position: absolute;
       bottom: 16px;
       right: 16px;
 
       svg {
-        color: ${({ theme }) => theme.color.primary};
+        color: ${({ theme }) => theme.color.background};
+        * {
+          color: inherit;
+        }
       }
     }
   }

@@ -70,8 +70,17 @@ const Signup = () => {
 };
 
 export const SignupStyle = styled.div`
+  min-height: 30vh;
   max-width: ${({ theme }) => theme.layout.width.small};
   margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    width: 100%;
+  }
 
   fieldset {
     border: 0;

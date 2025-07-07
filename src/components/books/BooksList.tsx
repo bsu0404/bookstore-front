@@ -25,7 +25,11 @@ const BooksList = ({ books }: Props) => {
   return (
     <BooksListStyle view={view}>
       {books?.map((item) => (
-        <BookItem key={item.id} book={item} />
+        <BookItem
+          key={item.id}
+          book={item}
+          direction={view === "grid" ? "column" : "row"}
+        />
       ))}
     </BooksListStyle>
   );

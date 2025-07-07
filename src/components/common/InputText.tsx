@@ -30,7 +30,7 @@ const InputTextStyled = styled.input`
   border-radius: ${({ theme }) => theme.borderRadius.default};
   font-size: 1rem;
   line-height: 1;
-  color: ${({ theme }) => theme.color.text};
+  color: black;
 `;
 
 export default InputText;

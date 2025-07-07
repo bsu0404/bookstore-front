@@ -56,7 +56,7 @@ const BookDetail = () => {
     <BookDetailStyle>
       <header className="header">
         <div className="img">
-          <img src={getImgSrc(book.id)} alt={book.title} />
+          <img src={book.img} alt={book.title} />
         </div>
         <div className="info">
           <Title size="large" color="text">
@@ -91,7 +91,7 @@ const BookDetail = () => {
         <Title size="medium">상세 설명</Title>
         <EllipsisBox linelimit={4}>{book.detail}</EllipsisBox>
         <Title size="medium">목차</Title>
-        <p className="index">{book.contents}</p>
+        <div className="index">{book.contents.replace(/\\n/g, "\n")}</div>
       </div>
     </BookDetailStyle>
   );
@@ -133,6 +133,11 @@ const BookDetailStyle = styled.div`
     // display: flex;
     // flex-direction: column;
     // gap: 12px;
+    margin-bottom: 20px;
+
+    .index {
+      white-space: pre-line;
+    }
   }
 `;
 

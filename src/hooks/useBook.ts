@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BookDetail } from "../models/book.model";
-import { fetchBook, likeBook } from "../api/books.api";
+import { fetchBook, likeBook, unlikeBook } from "../api/books.api";
 import { useAuthStore } from "../store/authStore";
 import { useAlert } from "./useAlert";
 import { addCart } from "../api/cart.api";
@@ -25,7 +25,7 @@ export const useBook = (bookId: string | undefined) => {
 
     // 낙관적 업데이트 - 불필요한 요청 제거
     if (book.liked) {
-      likeBook(book.id).then(() => {
+      unlikeBook(book.id).then(() => {
         setBook({
           ...book,
           liked: false,
