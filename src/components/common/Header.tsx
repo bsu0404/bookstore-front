@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/bookstore_logo.png";
 import { FaSignInAlt, FaRegUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useCategory } from "../../hooks/useCategory";
