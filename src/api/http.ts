@@ -1,7 +1,9 @@
 import axios, { AxiosRequestConfig } from "axios";
 // import { getToken, removeToken } from "../store/authStore";
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL =
+  "https://port-0-bookstore-server-mco9szd70ea8c624.sel5.cloudtype.app";
+
 const DEFAULT_TIMEOUT = 30000;
 
 // 실제로 클라이언트 작성
@@ -13,13 +15,21 @@ export const createClient = (config?: AxiosRequestConfig) => {
     timeout: DEFAULT_TIMEOUT,
     headers: {
       "Content-Type": "application/json",
-      Authorization: localStorage.getItem("token")
-        ? localStorage.getItem("token")
-        : "",
     },
     // withCredentials: true,
     ...config,
   });
+
+  axiosInstance.interceptors.request.use(
+    (config) => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        config.headers["Authorization"] = token;
+      }
+      return config;
+    },
+    (error) => Promise.reject(error)
+  );
   axiosInstance.interceptors.response.use(
     (response) => {
       return response;
